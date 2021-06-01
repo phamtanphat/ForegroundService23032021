@@ -1,7 +1,9 @@
 package com.example.foregroundservice23032021;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnForeground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                Intent intent = new Intent(MainActivity.this,MyService.class);
+                startService(intent);
             }
         });
     }
